@@ -1,0 +1,83 @@
+.cart-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 20;
+}
+
+.cart-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: min(380px, 100%);
+  background: #0d0b08;
+  border-left: 1px solid var(--border);
+  z-index: 21;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  transform: translateX(100%);
+  transition: transform 0.25s ease;
+}
+
+.cart-panel.open { transform: translateX(0); }
+
+.cart-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.cart-items { list-style: none; padding: 0; margin: 0; flex: 1; display: flex; flex-direction: column; gap: 16px; overflow-y: auto; }
+.cart-items li { display: flex; flex-direction: column; gap: 10px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+
+.cart-item-info { display: flex; justify-content: space-between; gap: 8px; }
+.cart-item-name { font-size: 14px; flex: 1; }
+.cart-item-price { font-weight: 600; white-space: nowrap; }
+
+.cart-item-controls { display: flex; align-items: center; gap: 12px; }
+
+.qty-stepper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0 4px;
+}
+
+.qty-stepper button {
+  background: none;
+  border: none;
+  padding: 4px 6px;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--ivory);
+  transition: color 0.2s ease;
+}
+
+.qty-stepper button:hover { color: var(--gold-lt); }
+
+.qty-stepper span {
+  min-width: 20px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.cart-remove {
+  font-size: 12px;
+  padding: 4px 8px;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  background: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cart-remove:hover { color: var(--gold-lt); border-color: var(--gold-lt); }
+
+.cart-panel-footer { margin-top: auto; display: flex; flex-direction: column; gap: 14px; }
+.cart-total { display: flex; justify-content: space-between; font-weight: 700; }

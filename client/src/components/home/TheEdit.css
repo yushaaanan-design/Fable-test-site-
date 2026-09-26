@@ -1,0 +1,48 @@
+.edit {
+  padding: 112px var(--gutter) 96px;
+  max-width: calc(1080px + 2 * var(--gutter));
+  margin-inline: auto;
+}
+
+.edit-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.edit-head h2 { font-size: clamp(28px, 4vw, 44px); }
+
+.text-link {
+  font-family: var(--label);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 12.5px;
+  color: var(--gold-lt);
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+}
+
+.text-link:hover { color: var(--ivory); }
+
+/* Asymmetric pair: large piece left, smaller piece dropped lower on the right. */
+.edit-grid {
+  display: grid;
+  grid-template-columns: 4fr 3fr;
+  gap: clamp(20px, 5vw, 72px);
+  align-items: start;
+}
+
+.edit-grid > :nth-child(2) { margin-top: clamp(64px, 12vw, 180px); }
+
+.edit-item .product-card-info h3 { font-size: 17px; }
+
+.edit-skeleton { aspect-ratio: 4 / 5; }
+
+@media (max-width: 768px) {
+  .edit { padding: 72px var(--gutter) 64px; }
+  .edit-grid { grid-template-columns: 1fr; }
+  .edit-grid > :nth-child(2) { margin-top: 0; }
+}

@@ -1,0 +1,94 @@
+.checkout {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 48px;
+  padding: 40px 32px 64px;
+  align-items: start;
+}
+
+.checkout.empty { display: block; }
+.checkout h1 { font-size: 26px; margin: 8px 0 24px; }
+
+.checkout-form { display: flex; flex-direction: column; gap: 6px; }
+
+.checkout-form label {
+  font-family: var(--label);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin-top: 14px;
+}
+
+.checkout-form input,
+.checkout-form textarea {
+  background: #0d0b08;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--ivory);
+  padding: 10px 12px;
+  font-family: var(--body);
+  font-size: 14px;
+  resize: vertical;
+}
+
+.checkout-form input:focus,
+.checkout-form textarea:focus {
+  outline: 2px solid var(--gold);
+  outline-offset: 1px;
+}
+
+.payment-methods {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.payment-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--body);
+  font-size: 14px;
+  text-transform: none;
+  letter-spacing: normal;
+  color: var(--ivory);
+  margin-top: 0;
+}
+
+.trust-line {
+  color: var(--muted);
+  font-size: 12.5px;
+  margin: 16px 0 0;
+}
+
+.checkout-error {
+  color: #e08a7a;
+  font-size: 13px;
+  margin: 10px 0 0;
+}
+
+.checkout-form button.primary { margin-top: 20px; align-self: flex-start; }
+
+.checkout-summary {
+  background: #0d0b08;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 22px;
+  position: sticky;
+  top: 90px;
+}
+
+.checkout-summary h2 { font-size: 16px; margin-bottom: 14px; }
+.checkout-summary ul { list-style: none; margin: 0 0 16px; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.checkout-summary li { display: flex; justify-content: space-between; font-size: 13.5px; }
+.checkout-total { display: flex; justify-content: space-between; font-weight: 700; padding-top: 14px; border-top: 1px solid var(--border); }
+
+@media (max-width: 780px) {
+  .checkout { grid-template-columns: 1fr; padding: 24px 16px 48px; gap: 28px; }
+  .checkout-summary { position: static; }
+}

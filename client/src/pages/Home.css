@@ -1,0 +1,73 @@
+/* Pulled up under the sticky header so the header can sit transparent over the image. */
+.hero {
+  position: relative;
+  margin-top: calc(-1 * var(--header-h));
+  min-height: 100dvh;
+  display: flex;
+  align-items: flex-end;
+  padding: 48px var(--gutter) clamp(48px, 8vh, 96px);
+  overflow: hidden;
+}
+
+.hero-media {
+  position: absolute;
+  inset: 0;
+  /* Wide crop + left anchoring pushes the subject right of the headline. */
+  background: url('https://picsum.photos/id/1005/2400/1000') 0% 30% / cover;
+  animation: hero-settle 1.6s var(--ease-out) both;
+}
+
+@media (max-width: 768px) {
+  .hero-media { background-image: url('https://picsum.photos/id/1005/800/1400'); background-position: 60% 20%; }
+}
+
+.hero-media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.2) 55%, transparent 80%),
+    linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.25) 50%, rgba(0,0,0,0.45) 100%);
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+}
+
+.hero-copy > * { animation: hero-rise 0.9s var(--ease-out) both; }
+.hero-copy > :nth-child(2) { animation-delay: 0.1s; }
+.hero-copy > :nth-child(3) { animation-delay: 0.2s; }
+
+.hero-copy h1 {
+  font-size: clamp(38px, 6vw, 68px);
+  line-height: 1.02;
+  letter-spacing: -0.015em;
+  margin: 0 0 18px;
+  background: linear-gradient(90deg, var(--gold-lt), var(--gold));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-copy p {
+  margin: 0 0 30px;
+  max-width: 44ch;
+  color: var(--ivory);
+  opacity: 0.85;
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+.home-error { padding: 64px var(--gutter); color: var(--muted); }
+
+@keyframes hero-rise {
+  from { opacity: 0; transform: translateY(18px); }
+}
+
+@keyframes hero-settle {
+  from { transform: scale(1.08); }
+}

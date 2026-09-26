@@ -1,0 +1,27 @@
+.statement {
+  padding: clamp(96px, 16vw, 200px) var(--gutter);
+  border-top: 1px solid var(--border);
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 40%, rgba(138, 115, 85, 0.12), transparent 70%),
+    var(--black);
+  text-align: center;
+}
+
+.statement h2 {
+  font-size: clamp(40px, 8vw, 112px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  max-width: 14ch;
+  margin: 0 auto;
+  text-wrap: balance;
+}
+
+.statement h2 span { color: var(--gold-lt); }
+
+.statement p {
+  margin: 32px auto 0;
+  max-width: 44ch;
+  color: var(--muted);
+  font-size: clamp(16px, 1.6vw, 19px);
+  line-height: 1.6;
+}

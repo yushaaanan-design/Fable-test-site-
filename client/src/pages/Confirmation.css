@@ -1,0 +1,22 @@
+.confirmation {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 48px;
+  max-width: 480px;
+}
+
+.confirmation h1 {
+  font-size: 34px;
+  margin: 8px 0 20px;
+  background: linear-gradient(90deg, var(--gold-lt), var(--gold));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.order-id { font-size: 16px; font-weight: 700; margin: 0 0 4px; }
+.order-total { color: var(--gold-lt); margin: 0 0 20px; }
+.confirmation .state-msg { margin-bottom: 28px; }
